@@ -34,6 +34,8 @@ students = {
     },
 }
 # ваш код нижче !!!!!!!! вище нічого не змінюємо
+from decimal import Decimal
+group_average_score = 0
 
 students['Кіра Йошикаге'] = {}
 students['Кіра Йошикаге']['Пошта'] = 'Kirayoshukage@gmail.com'
@@ -44,3 +46,6 @@ students['Кіра Йошикаге']['Середній бал'] = float(93.2)
 for student_name, student_info in students.items():
     if student_info['Середній бал'] > 90:
         print(student_name + ' ' + str(student_info['Середній бал']))
+    group_average_score += student_info['Середній бал']
+
+print(f'\nСередній балл групі = {Decimal(group_average_score / 4).quantize(Decimal("0.1"))}')
