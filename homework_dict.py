@@ -47,5 +47,5 @@ for student_name, student_info in students.items():
     if student_info['Середній бал'] > 90:
         print(student_name + ' ' + str(student_info['Середній бал']))
     group_average_score += student_info['Середній бал']
-
-print(f'\nСередній балл групі = {Decimal(group_average_score / 4).quantize(Decimal("0.1"))}')
+student_count = len(students)
+print(f'\nСередній балл групі = {Decimal(group_average_score / student_count).quantize(Decimal("0.1"))}')
