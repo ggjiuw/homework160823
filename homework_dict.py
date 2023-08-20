@@ -48,4 +48,7 @@ for student_name, student_info in students.items():
         print(student_name + ' ' + str(student_info['Середній бал']))
     group_average_score += student_info['Середній бал']
 student_count = len(students)
-print(f'\nСередній балл групі = {Decimal(group_average_score / student_count).quantize(Decimal("0.1"))}')
+if student_count != 0:
+    print(f'\nСередній балл групі = {Decimal(group_average_score / student_count).quantize(Decimal("0.1"))}')
+else:
+    print('У групі немає студентів... \U0001F480')
